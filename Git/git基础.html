@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+
+<script>
+    // Git是一个开源的分布式版本控制系统
+        // 它的快速和高效依赖于，直接记录快照而非差异化比较，几乎所有操作都在本地执行
+
+    // SVN的差异比较：存储一组基本文件和每个文件随时间逐步积累的差异
+    // 可以节省磁盘空间，但耗时，效率低，每次切换版本时，都要在基本文件上应用每个差异，从而生成目标版本文件
+
+    // Git快照：在原有文件版本基础上重新生成一份新文件，类似备份，若未修改则只保存链接指向原来的文件
+        // 占用磁盘空间大，但版本切换非常快
+    // Git中大多数操作都只需要访问本地文件和资源，不需要网络上其他计算机的信息
+        // 断网后依旧可在本地对项目版本进行管理
+        // 联网后把本地修改同步到云端服务器
+    
+    // Git拥有三个区域：工作区，暂存区，Git仓库
+    // Git中的三种状态：已修改(modified)，已暂存(staged)，已提交(committed)
+
+
+
+    // 配置用户名和邮箱      --global 全局选项(只需要运行一次即可永久生效)
+    // git config --global user.name "huangdou"
+    // git config --global user.email "1120089044@qq.com"
+    // 全局配置存放位置 C:\Users\皇豆\.gitconfig
+
+    // 可使用 git config --list --global  查看全局配置项
+
+    // 获取帮助信息
+    // git help config
+    // git config -h 
+
+    // 获取git仓库的两种方式：1.将尚未进行版本控制的本地目录转换为Git仓库
+                        // 2.从其他服务器克隆一个已存在的Git仓库
+
+
+    /* 初始化仓库
+        在项目目录中，右键Git Bush
+        git init  将当前目录转化为Git仓库(会创建名为.git的隐藏文件，即当前项目的Git仓库)
+    */
+
+    /* 工作区中文件的四种状态：未跟踪(Untracked)，未修改，已修改，已暂存
+            Git操作的最终状态：让工作区中所有文件都处于未修改
+        
+        git status  查看文件处于什么状态
+        git status -s  精简的状态报告
+    */
+
+    /* 跟踪文件
+        git add 文件名     
+        Changes to be committed(A) 说明已被跟踪处于暂存状态
+        git add . 将所有文件加入暂存区
+
+        已修改但未提交到暂存区的文件，状态会显示
+        Changes not staged for commit(M红色)
+        git add 同样可以将已修改的文件提交到暂存区 (M绿色)
+
+        提交更新(将暂存区中的文件提交到Git仓库)
+        git commit -m "对提交内容的描述"   
+        nothing to commit,working tree clean 说明所有文件都处于未修改状态
+
+        撤销修改
+        git checkout -- 文件名
+        用Git仓库中保存的文件覆盖指定文件(危险性高)
+
+        取消暂存文件
+        git reset HEAD 文件名
+
+        跳过暂存直接提交到git仓库
+        git commit -a -m "描述信息" (将所有 已跟踪 的文件暂存并提交，从而跳过git add)
+
+        移除文件
+        git rm -f 文件名    从git仓库和工作区同时移除文件(状态为D)
+        git rm --cached 文件名   从git仓库中移除 (状态为D和??)
+    */
+
+    /*忽略文件(使其不出现在未跟踪列表中)
+        手动创建一个名为.gitignore的配置文件，列出要忽略的文件匹配模式
+            #开头的是注释
+            /开头防止递归
+            /结尾的是目录
+            !开头表示取反
+            glob模式(简化的正则)对文件和文件夹进行匹配
+                * 匹配0或多个任意字符
+                [abc] 匹配其中一个字符
+                ? 匹配一个任意字符
+                [0-9] -表示范围
+                a/ ** /z 匹配文件夹a到z任意中间目录
+    */
+
+    /*查看提交历史
+        git log    按时间先后顺序列出提交历史，最近的提交在最上面
+        git log -2   只展示最近的两条
+
+      回退到指定版本
+        git reset --hard commitID   根据提交历史中的ID回退到指定版本
+
+      在回退后的版本查看完整的历史
+        git reflog --pretty=online
+
+    */
+</script>
+
+</body>
+</html>

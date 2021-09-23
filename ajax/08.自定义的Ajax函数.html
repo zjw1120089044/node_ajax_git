@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义Ajax函数</title>
+    <script src="./08.myAjax.js"></script>
+</head>
+<body>
+    
+
+
+<script>
+    myAjax({
+        method: 'GET',
+        url: 'http://www.liulongbin.top:3006/api/getbooks',
+        data: {
+            id: 1
+        },
+        success: (res) => {
+            console.log(res);
+        }
+    });
+
+
+    myAjax({
+        method: 'POST',
+        url: 'http://www.liulongbin.top:3006/api/addbook',
+        data: {
+            bookname: '格林',
+            author: '安徒生',
+            publisher: '杭州图书出版社'
+        },
+        success: (res) => {
+            console.log(res);
+        }
+    })
+</script>
+
+</body>
+</html>

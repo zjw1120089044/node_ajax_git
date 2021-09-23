@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖和节流</title>
+    <script src="./jQuery.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .gif {
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="./images/loading.gif" alt="" class="gif">
+
+
+<script>
+    //防抖策略：事件被触发后，延迟n秒后执行回调函数，如果再次被触发则 重新计时 (防止事件多次执行)
+    // (开启定时器之前 ，清除定时器)
+
+    //节流策略：减少一段时间内事件的触发频率，提高性能
+
+    $(function(){
+        var gif = $('.gif');
+
+        // 定义节流阀
+        var timer = null;
+
+        $(document).on('mousemove', function(e){
+            if(timer){ return; }  //节流阀若不为空，则返回
+
+            timer = setTimeout(function(){
+                gif.css('left', e.pageX + 'px').css('top', e.pageY + 'px');
+
+                timer = null;  //清空节流阀
+            }, 16)
+            
+        })
+    })
+
+
+    // 防抖和节流的区别
+    // 防抖：事件频繁触发，只有最后一次生效
+    // 节流：事件频繁触发，减少事件触发频率
+</script>
+
+</body>
+</html>

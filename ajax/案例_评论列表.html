@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>评论列表</title>
+    <link rel="stylesheet" href="./bootstrap.css">
+    <script src="./jQuery.js"></script>
+</head>
+<body style="padding: 15px;">
+    
+    <div class="panel panel-primary">
+          <div class="panel-heading">
+                <h3 class="panel-title">发表评论</h3>
+          </div>
+          <form class="panel-body" id="formAdd">
+                <div>评论人：</div>
+                <input type="text" class="form-control" name="username">
+                <div>评论内容：</div>
+                <textarea class="form-control" name="content"></textarea>
+                <button type="submit" class="btn btn-primary">发表评论</button>
+          </form>
+    </div>
+    
+    
+    <ul class="list-group" id="list">
+        <!-- <li class="list-group-item">
+            <span class="badge" style="background-color: #f0ad4e;">评论时间：</span>
+            <span class="badge" style="background-color: #5bc0de;">评论人：</span>
+            item
+        </li> -->
+    </ul>
+    
+
+<script>
+    $(function(){
+        function getList(){
+            $.ajax({
+                method: 'GET',
+                url: 'http://www.liulongbin.top:3006/api/cmtlist',
+                success: (res) => {
+                    if(res.status != 200) return alert('获取评论列表失败');
+
+                    var rows = [];
+                    $.each(res.data, function(i, item){
+                        var str = `
+                            <li class="list-group-item">
+                                <span class="badge" style="background-color: #f0ad4e;">评论时间：${item.time}</span>
+                                <span class="badge" style="background-color: #5bc0de;">评论人：${item.username}</span>
+                                ${item.content}
+                            </li>`
+                        rows.push(str);
+                    })
+
+                    $('#list').empty().append(rows.join(''));
+                }
+            })
+        }
+        getList();
+
+
+        $('#formAdd').on('submit', function(e){
+            e.preventDefault();
+            var data = $(this).serialize();
+            console.log(data);
+            // console.log(this);
+            $.post('http://www.liulongbin.top:3006/api/addcmt', data, (res) => {
+                if(res.status != 201) return alert('发表评论失败');
+                getList();
+
+                // 清除之前输入的内容
+                $('#formAdd')[0].reset();
+                //jq对象转换为DOM对象
+
+                // console.log(this);  使用箭头函数时这里this指向form
+                // this.reset();
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

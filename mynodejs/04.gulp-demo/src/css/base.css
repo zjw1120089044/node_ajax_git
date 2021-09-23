@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+em,
+i {
+    font-style: normal;
+    /* 倾斜字体不倾斜 */
+}
+li {
+    list-style: none;
+    /* 去掉li的圆点 */
+}
+img {
+    border: 0;/* 低版本浏览器兼容性问题，图片添加连接后会有边框问题 */
+    vertical-align: middle;
+    /* 取消图片底侧空白缝隙问题，让图片与文字居中显示 */
+}
+button {
+    cursor: pointer;
+    /* 鼠标经过按钮时变成手 */
+}
+a {
+    color: #666;
+    text-decoration: none;
+    /* 取消超链接下划线 */
+}
+a:hover {
+    color: royalblue;
+}
+button,
+input {
+    font-family: Microsoft YaHei,"9ED1\4F53";
+                                  /* 黑体 */
+    border: 0;
+    outline: none;
+}
+body {
+    /* css3抗锯齿，让文字更清晰 */
+    -webkit-font-smoothing: antialiased;
+    font: 12px/1.5 Microsoft YaHei,"5B8B\4F53";
+                                    /* 宋体 */
+}
+.hide,
+.none {
+    display: none;
+}
+.clearfix:after {
+    /* 清除浮动 */
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: ".";
+    height: 0;
+}
+.clearfix {
+    *zoom: 1;
+}

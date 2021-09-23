@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>git分支</title>
+</head>
+<body>
+    
+
+
+
+<script>
+    /* main主分支：用来保存和记录整个项目已完成的功能代码
+                    不允许程序员在主分支上直接修改代码
+    */
+
+    /* 功能分支：专门用来开发新功能的分支
+            临时从主分支上分叉出来的，新功能开发测试完成后合并到主分支
+    */
+
+    /* 查看所有分支列表
+            git branch
+
+        创建分支
+            git branch 分支名     新分支的代码和当前分支完全一致
+        
+        切换分支
+            git checkout 分支名
+        创建新分支，并立即切换到新分支
+            git checkout -b 分支名
+
+        合并分支
+            在主分支上运行 git merge 分支名  ，将分支合并到主分支上
+
+        删除分支
+            git branch -d 分支名
+        
+        合并时遇到冲突(两个分支对同一个文件进行了修改)
+            此时会处于merging状态，需要手动解决冲突
+            然后执行git add .; git commit -m "解决了冲突"
+    */
+
+    /* 本地分支推送到远程仓库
+            git push -u 远程仓库别名 本地分支名:远程分支名
+            (第二次推送直接使用git push即可)
+            若不想重命名，直接使用本地分支名作为远程分支名可省略:后的部分
+            git push -u origin 本地分支名
+
+        查看远程仓库中所有分支列表
+            git remote show 远程仓库名(默认为origin)
+
+        跟踪分支(把远程分支下载到本地仓库)
+            git checkout 远程分支名
+
+        拉取远程分支最新的代码，下载到本地对应的分支中
+            git pull
+
+        删除远程分支
+            git push origin(远程仓库名) --delete 远程分支名
+    */
+</script>
+
+</body>
+</html>

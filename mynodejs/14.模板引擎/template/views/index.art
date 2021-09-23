@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>{{ name }}</p>
+    <p>{{ 1+1 }}</p>
+    <p>{{ 1+1 == 2 ? '相等' : '不相等' }}</p>
+    <p>{{ content }}</p>
+    <p>{{@ content }}</p>    <!-- 为了安全性模板引擎默认不会解析标签 -->
+
+    <p><%= name %></p>
+    <p><%= 1+2 %></p>
+    <p><%= 1+2 == 2 ? '相等' : '不相等' %></p>
+    <p><%- content %></p>
+
+
+
+    {{if age >18}}
+        年龄大于18
+    {{else if age < 10}}
+        年龄小于10
+    {{else}}
+        年龄不符合要求
+    {{/if}}
+
+    <% if(age > 18) { %>
+        年龄大于18
+    <% }else if(age < 10) { %>
+        年龄小于10
+    <% }else { %>
+        年龄不符合要求
+    <% } %>
+
+
+    
+</body>
+</html>

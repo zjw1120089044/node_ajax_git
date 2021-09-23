@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>github远程仓库</title>
+</head>
+<body>
+    
+
+
+
+<script>
+    // 远程仓库两种访问方式
+    // HTTPS：零配置，但每次访问都需要输入github账号密码才能访问
+    // SSH：需要进行额外配置，访问时不需要github账号密码(实际开发中使用)
+
+
+    /* 基于HTTPS将本地仓库上传到github
+            git remote add origin https://github.com/***   //本地仓库和远程仓库进行关联，并把远程仓库命名为origin
+            git push -u origin master           //本地仓库中的内容推送到远程仓库origin
+        第二次提交时只需git push即可    
+    */
+
+    /* SSH key
+        作用：实现本地仓库和github之间免登录的加密数据传输
+        组成部分：id_rsa(私钥文件，存放于客户端电脑中)
+                id_rsa.pub(公钥文件.需要配置到github中)
+        
+        生成SSH key
+            ssh-keygen -t rsa -b 4096 -C "1120089044@qq.com"
+            连敲三次回车，即可在C:\Users\皇豆\.ssh中生成id_rsa和id_rsa.pub
+
+        检测github的ssh key是否配置成功
+            ssh -T git@github.com    之后输入yes
+    */
+
+    /* 基于SSH将本地仓库上传到github
+            git remote add origin git@github.com***
+            git push -u origin master
+    */
+
+    /* 将远程仓库克隆到本地
+            git clone 远程仓库地址   (不能在已有的git仓库分支目录下克隆)
+
+        删除远程仓库
+            git remote rm origin
+        
+        查看本地仓库关联的远程仓库地址
+            git remote -v
+    */
+</script>
+
+</body>
+</html>

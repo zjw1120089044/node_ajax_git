@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSONP</title>
+    <script src="./jQuery.js"></script>
+</head>
+<body>
+    
+
+
+
+<script>
+    // JSONP实现原理
+        // 网页中无法通过Ajax请求非同源接口数据，但<script>标签不受同源策略影响，
+        // 可通过src属性请求非同源js，并通过函数调用的形式接受跨域接口相应的数据
+
+
+    function success(data){
+        console.log('JSONP响应回来的数据是：');
+        console.log(data);
+    }
+
+
+    // 使用jQuery发起JSONP请求(动态的在<head>中添加一个<script>标签，JSONP执行完成后删除)
+    // 使用jQuery发起JSONP请求默认会自动生成一个随机的回调函数名
+    // callback=jQuery3600038726320078403154_1629345019591
+    $.ajax({
+        url: 'http://www.liulongbin.top:3006/api/jsonp?name=zs&age=20',
+
+        //表示要发起JSONP请求
+        dataType: 'jsonp',
+
+        // 参数名称(一般不写，默认为callback)
+        // jsonp: 'callback',
+        // 自定义的回调函数名(若不指定则随机生成)
+        // jsonpCallback: 'getData',
+
+        success: (res) => {
+            console.log('jQuery的JSONP');
+            console.log(res);
+        }
+    })
+</script>
+                                                        <!-- 指定非同源js中回调函数的名字 -->
+<script src="http://www.liulongbin.top:3006/api/jsonp?callback=success&name=ls&age=30"></script>
+            <!-- 接口返回函数的调用(字符串形式)，但script标签会自动解析 -->
+            <!-- success({name: 'ls', age: 30}) -->
+
+</body>
+</html>

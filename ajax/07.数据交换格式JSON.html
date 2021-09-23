@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数据交换格式</title>
+</head>
+<body>
+    
+
+
+<script>
+    // JSON对象结构   必须使用双引号包裹字符串  value值可以是数字，字符串，布尔值，null，数组，对象
+    //不能使用undefined或 函数 作为value的值  不能写注释
+    // {
+    //     "name": "张三",
+    //     "age": 20,
+    //     "sex": "男",
+    //     "address": null,
+    //     "hobbies": ["吃饭", "睡觉"];
+    // }
+    // JSON的本质是一个字符串
+
+
+    // JSON字符串转化为js对象 (反序列化)
+    var jsonstr = '{"name":"张三","age":18}';
+    var obj = JSON.parse(jsonstr);
+    console.log(obj);
+    // js对象转换为JSON字符串 (序列化)
+    var obj1 = {name: '李四', age: 20};
+    var jsonstr1 = JSON.stringify(obj1);
+    console.log(jsonstr1);
+
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');
+    //发送请求
+    xhr.send();                                                    
+    xhr.onreadystatechange = function(){                           
+        if(xhr.readyState == 4 && xhr.status == 200){              
+            console.log(xhr.responseText);
+            //输出的结果是JSON字符串形式
+
+            var result = JSON.parse(xhr.responseText);
+            console.log(result);
+        }
+    }
+
+</script>
+
+</body>
+</html>

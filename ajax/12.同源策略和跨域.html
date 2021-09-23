@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+<script>
+    // 同源：两个网页的协议(http与https不同)，域名(www.test.com)，端口都相同(:80) ，即具有相同的源
+    // 端口不写默认为80
+    
+    // 同源策略：浏览器提供的安全功能 ，限制一个网站的JavaScript不允许和非同源网站之间进行资源交换
+        // 如：无法读取非同源网站的Cookie，LocalStorage，IndexedDB
+        // 无法操作非同源网站的DOM
+        // 无法向非同源网站发送Ajax请求
+
+    // 跨域：两个非同源网站进行资源交互
+
+    // 浏览器允许发起跨域请求 ，但跨域响应回来的数据会被浏览器拦截
+
+    //Access-Control-Allow-Origin  跨域请求时浏览器报错
+
+    // 实现跨域请求
+    // 1.JSONP：出现早，兼容性好，临时的解决方案，只支持GET请求不支持POST
+    // 2.CORS：出现晚，W3C标准，跨域Ajax请求的根本解决方案，支持GET，POST，不兼容低版本浏览器
+    
+</script>
+
+</body>
+</html>

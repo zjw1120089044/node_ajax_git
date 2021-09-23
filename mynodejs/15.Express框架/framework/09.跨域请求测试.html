@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>跨域测试</title>
+    <script src="https://cdn.staticfile.org/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <button id="btnGET">发起GET请求</button>
+    <button id="btnPOST">发起POST请求</button>
+    <button id="btnDel">发起DELETE请求</button>
+    <button id="btnjsonp">发起jsonp请求</button>
+
+<script>
+    $(function(){
+        $('#btnGET').on('click', function(){
+            $.ajax({
+                method: 'GET',
+                url: 'http://localhost:3000/api/get',
+                data: {name: '张三', age: 18},
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        })
+
+        $('#btnPOST').on('click', function(){
+            $.ajax({
+                method: 'POST',
+                url: 'http://localhost:3000/api/post',
+                data: {name: '李四', age: 20},
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        })
+
+        // 预检请求测试
+        $('#btnDel').on('click', function(){
+            $.ajax({
+                method: 'DELETE',
+                url: 'http://localhost:3000/api/delete',
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        })
+
+        $('#btnjsonp').on('click', function(){
+            $.ajax({
+                method: 'GET',
+                url: 'http://localhost:3000/api/jsonp',
+                dataType: 'jsonp',
+                success: (res) => {
+                    console.log(res);
+                }
+            })
+        })
+    })
+</script>
+
+</body>
+</html>

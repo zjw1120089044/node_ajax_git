@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    
+
+    <!-- SEO搜索引擎排名优化 TDK -->
+    <title>品优购</title>
+    <!-- 网站说明 -->
+    <meta name="description" content="品优购购物商城，网站描述">
+    <!-- 关键字 -->
+    <meta name="keywords" content="购物，商城">
+
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_2516509_stkgccoeubg.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <script src="animate.js"></script>
+    <script src="js/jQuery.js"></script>
+    <script src="js/index.js"></script>
+    
+</head>
+<body>
+    @@include('common/header.html')
+
+    <!-- 侧边栏 -->
+    <div class="w" style="position: relative;">
+        <div class="c_nav">
+            <ul>
+                <li class="c_nav_current">家用电器 <span>进入</span></li>
+                <li>通讯 <span>进入</span></li>
+                <li>电脑办公 <span>进入</span></li>
+                <li>生活用品 <span>进入</span></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- nav导航模块 -->
+    <nav class="nav">
+        <div class="w">
+            <div class="dropdown">
+                <div class="hd">全部商品分类</div>
+                <div class="bd">
+                    <ul>
+                        <li><a href="#">家用电器</a></li>
+                        <li><a href="list.html">手机、</a> <a href="#">数码、</a><a href="#">通信、</a> </li>
+                        <li><a href="#">电脑、办公</a> </li>
+                        <li><a href="#">家居、家具、家装、厨具</a> </li>
+                        <li><a href="#">男装、女装、童装、内衣</a> </li>
+                        <li><a href="#">个户化妆、清洁用品、宠物</a> </li>
+                        <li><a href="#">鞋靴、箱包、珠宝、奢侈品</a> </li>
+                        <li><a href="#">运动户外、钟表</a> </li>
+                        <li><a href="#">汽车、汽车用品</a> </li>
+                        <li><a href="#">母婴、玩具乐器</a> </li>
+                        <li><a href="#">食品、酒类、生鲜、特产</a> </li>
+                        <li><a href="#">医药保健</a> </li>
+                        <li><a href="#">图书、音像、电子书</a> </li>
+                        <li><a href="#">彩票、旅行、充值、票务</a> </li>
+                        <li><a href="#">理财、众筹、白条、保险</a> </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="navitems">
+                <ul>
+                    <li><a href="#">服装城</a></li>
+                    <li><a href="#">美妆馆</a></li>
+                    <li><a href="#">传智超市</a></li>
+                    <li><a href="#">全球购</a></li>
+                    <li><a href="#">闪购</a></li>
+                    <li><a href="#">团购</a></li>
+                    <li><a href="#">拍卖</a></li>
+                    <li><a href="#">有趣</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页专有模块 -->
+    <div class="w">
+        <div class="main">
+
+            <!-- 轮播图 -->
+            <div class="focus">
+                <a href="javascript:;" class="arrow-left"><img src="images/arrow-prev.png" alt=""></a>
+                <a href="javascript:;" class="arrow-right"><img src="images/arrow-next.png" alt=""></a>
+                <ul>
+                    <li>
+                        <img src="upload/focus.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="upload/focus1.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="upload/focus2.jpg" alt="">
+                    </li>
+                    <li>
+                        <img src="upload/focus3.jpg" alt="">
+                    </li>
+                </ul>
+                <ol class="circle">
+                    <!-- <li class="current"></li>
+                    <li></li>
+                    <li></li>
+                    <li></li> -->
+                </ol>
+            </div>
+
+            <div class="newsflash">
+                <div class="news">
+                    <div class="news_hd">
+                        <h5>品优购快报</h5><a href="#" class="more">更多</a>
+                    </div>
+
+                    <div class="news_bd">
+                        <ul>
+                            <li><a href="#"><strong>[特惠]</strong>备战开学季，全民半价,备战开学季，全民半价</a></li>
+                            <li><a href="#"><strong>[公告]</strong>品优稳占家电网购六成</a></li>
+                            <li><a href="#"><strong>[特惠]</strong>百元礼品券限量领</a></li>
+                            <li><a href="#"><strong>[公告]</strong>每日折扣优惠</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lifeservice">
+                    <ul>
+                        <li><a href="#"><i></i><p>话费</p></a></li>
+                        <li><a href="#"><i></i><p>机票</p></a></li>
+                        <li><a href="#"><i></i><p>电影票</p></a></li>
+                        <li><a href="#"><i></i><p>游戏</p></a></li>
+                        <li><a href="#"><i></i><p>彩票</p></a></li>
+                        <li><a href="#"><i></i><p>加油卡</p></a></li>
+                        <li><a href="#"><i></i><p>酒店</p></a></li>
+                        <li><a href="#"><i></i><p>火车票</p></a></li>
+                        <li><a href="#"><i></i><p>众筹</p></a></li>
+                        <li><a href="#"><i></i><p>理财</p></a></li>
+                        <li><a href="#"><i></i><p>礼品卡</p></a></li>
+                        <li><a href="#"><i></i><p>白条</p></a></li>
+                    </ul>
+                </div>
+
+                <div class="bargain">
+                    <a href="javascript:;"><img data-lazy-src="upload/bargain.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 首页推荐模块 -->
+    <div class="recom w">
+        <div class="recom_hd"><img data-lazy-src="images/recom.png" alt=""></div>
+        <div class="recom_bd">
+            <ul>
+                <li><a href="javascript:;"><img data-lazy-src="upload/recom_03.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/recom_03.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/recom_03.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/recom_03.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 猜你喜欢 -->
+    <div class="like w">
+        <div class="like_hd">
+            <h3>猜你喜欢</h3>
+            <i class="iconfont icon-lishi">&nbsp;换一批</i>
+        </div>
+        <div class="like_bd">
+            <ul>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl1.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl2.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl3.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl4.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl5.jpg" alt=""></a></li>
+                <li><a href="javascript:;"><img data-lazy-src="upload/yl6.jpg" alt=""></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 楼层区域 -->
+    <div class="floor">
+        <!-- 1楼家用电器 -->
+        <div class="jiadian w">
+            <div class="box_hd">
+                <h3>家用电器</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li><a href="#" class="style_color">热门</a> | </li>
+                        <li><a href="#">大家电</a> | </li>
+                        <li><a href="#">生活电器</a> | </li>
+                        <li><a href="#">厨房电器</a> | </li>
+                        <li><a href="#">个人健康</a> | </li>
+                        <li><a href="#">应季电器</a> | </li>
+                        <li><a href="#">空气净化</a> | </li>
+                        <li><a href="#">新奇特</a> | </li>
+                        <li><a href="#">高端电器</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="tab_list_item">
+                        <div class="col_1">
+                            <ul>
+                                <li><a href="#">节能补贴</a></li>
+                                <li><a href="#">4K电视</a></li>
+                                <li><a href="#">空气净化器</a></li>
+                                <li><a href="#">IH电饭煲</a></li>
+                                <li><a href="#">滚筒洗衣机</a></li>
+                                <li><a href="#">电热水器</a></li>
+                            </ul>
+                            <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                        </div>
+                        <div class="col_2">
+                            <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                        </div>
+                        <div class="col_3">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-3.png" alt=""></a>
+                        </div>
+                        <div class="col_4">
+                            <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt=""></a>
+                        </div>
+                        <div class="col_5">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-6.png" alt=""></a>
+                        </div>
+                    </div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                    <div class="tab_list_item"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad_logo w">
+            <ul>
+                <li><a href="#"><img data-lazy-src="images/ad_logo01.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo02.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo03.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo04.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo05.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo06.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo07.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo08.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo09.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo10.png" alt=""></a> </li>
+            </ul>
+        </div>
+
+        <!-- 2楼手机通讯 -->
+        <div class="shouji w">
+            <div class="box_hd">
+                <h3>手机通讯</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li><a href="#" class="style_color">热门</a> | </li>
+                        <li><a href="#">大家电</a> | </li>
+                        <li><a href="#">生活电器</a> | </li>
+                        <li><a href="#">厨房电器</a> | </li>
+                        <li><a href="#">个人健康</a> | </li>
+                        <li><a href="#">应季电器</a> | </li>
+                        <li><a href="#">空气净化</a> | </li>
+                        <li><a href="#">新奇特</a> | </li>
+                        <li><a href="#">高端电器</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="tab_list_item">
+                        <div class="col_1">
+                            <ul>
+                                <li><a href="#">节能补贴</a></li>
+                                <li><a href="#">4K电视</a></li>
+                                <li><a href="#">空气净化器</a></li>
+                                <li><a href="#">IH电饭煲</a></li>
+                                <li><a href="#">滚筒洗衣机</a></li>
+                                <li><a href="#">电热水器</a></li>
+                            </ul>
+                            <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                        </div>
+                        <div class="col_2">
+                            <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                        </div>
+                        <div class="col_3">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-3.png" alt=""></a>
+                        </div>
+                        <div class="col_4">
+                            <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt=""></a>
+                        </div>
+                        <div class="col_5">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-6.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad_logo w">
+            <ul>
+                <li><a href="#"><img data-lazy-src="images/ad_logo01.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo02.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo03.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo04.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo05.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo06.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo07.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo08.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo09.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo10.png" alt=""></a> </li>
+            </ul>
+        </div>
+
+        <!-- 3楼电脑 -->
+        <div class="diannao w">
+            <div class="box_hd">
+                <h3>电脑办公</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li><a href="#" class="style_color">热门</a> | </li>
+                        <li><a href="#">大家电</a> | </li>
+                        <li><a href="#">生活电器</a> | </li>
+                        <li><a href="#">厨房电器</a> | </li>
+                        <li><a href="#">个人健康</a> | </li>
+                        <li><a href="#">应季电器</a> | </li>
+                        <li><a href="#">空气净化</a> | </li>
+                        <li><a href="#">新奇特</a> | </li>
+                        <li><a href="#">高端电器</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="tab_list_item">
+                        <div class="col_1">
+                            <ul>
+                                <li><a href="#">节能补贴</a></li>
+                                <li><a href="#">4K电视</a></li>
+                                <li><a href="#">空气净化器</a></li>
+                                <li><a href="#">IH电饭煲</a></li>
+                                <li><a href="#">滚筒洗衣机</a></li>
+                                <li><a href="#">电热水器</a></li>
+                            </ul>
+                            <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                        </div>
+                        <div class="col_2">
+                            <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                        </div>
+                        <div class="col_3">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-3.png" alt=""></a>
+                        </div>
+                        <div class="col_4">
+                            <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt=""></a>
+                        </div>
+                        <div class="col_5">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-6.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad_logo w">
+            <ul>
+                <li><a href="#"><img data-lazy-src="images/ad_logo01.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo02.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo03.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo04.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo05.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo06.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo07.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo08.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo09.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo10.png" alt=""></a> </li>
+            </ul>
+        </div>
+
+        <!-- 4楼生活 -->
+        <div class="shenghuo w">
+            <div class="box_hd">
+                <h3>生活用品</h3>
+                <div class="tab_list">
+                    <ul>
+                        <li><a href="#" class="style_color">热门</a> | </li>
+                        <li><a href="#">大家电</a> | </li>
+                        <li><a href="#">生活电器</a> | </li>
+                        <li><a href="#">厨房电器</a> | </li>
+                        <li><a href="#">个人健康</a> | </li>
+                        <li><a href="#">应季电器</a> | </li>
+                        <li><a href="#">空气净化</a> | </li>
+                        <li><a href="#">新奇特</a> | </li>
+                        <li><a href="#">高端电器</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box_bd">
+                <div class="tab_content">
+                    <div class="tab_list_item">
+                        <div class="col_1">
+                            <ul>
+                                <li><a href="#">节能补贴</a></li>
+                                <li><a href="#">4K电视</a></li>
+                                <li><a href="#">空气净化器</a></li>
+                                <li><a href="#">IH电饭煲</a></li>
+                                <li><a href="#">滚筒洗衣机</a></li>
+                                <li><a href="#">电热水器</a></li>
+                            </ul>
+                            <a href="#"><img data-lazy-src="upload/floor-1-1.png" alt=""></a>
+                        </div>
+                        <div class="col_2">
+                            <a href="#"><img data-lazy-src="upload/floor-1-b01.png" alt=""></a>
+                        </div>
+                        <div class="col_3">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-2.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-3.png" alt=""></a>
+                        </div>
+                        <div class="col_4">
+                            <a href="#"><img data-lazy-src="upload/floor-1-4.png" alt=""></a>
+                        </div>
+                        <div class="col_5">
+                            <a href="#" class="border_b"><img data-lazy-src="upload/floor-1-5.png" alt=""></a>
+                            <a href="#"><img data-lazy-src="upload/floor-1-6.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad_logo w">
+            <ul>
+                <li><a href="#"><img data-lazy-src="images/ad_logo01.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo02.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo03.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo04.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo05.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo06.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo07.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo08.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo09.png" alt=""></a> </li> 
+                <li><a href="#"><img data-lazy-src="images/ad_logo10.png" alt=""></a> </li>
+            </ul>
+        </div>
+    </div>
+
+    
+
+    <!-- 底部模块 -->
+    <footer class="footer">
+         <div class="w">
+             <div class="mod_service">
+                 <ul>
+                     <li>
+                         <h5></h5>
+                         <div class="service_txt">
+                             <h4>正品保障</h4>
+                             <p>正品保障，提供发票</p>
+                         </div>
+                     </li>
+                     <li>
+                        <h5></h5>
+                        <div class="service_txt">
+                            <h4>急速物流</h4>
+                            <p>急速物流，极速送达</p>
+                        </div>
+                    </li><li>
+                        <h5></h5>
+                        <div class="service_txt">
+                            <h4>无忧售后</h4>
+                            <p>7天无理由退换货</p>
+                        </div>
+                    </li><li>
+                        <h5></h5>
+                        <div class="service_txt">
+                            <h4>特色服务</h4>
+                            <p>私人订制家电套餐</p>
+                        </div>
+                    </li>
+                 </ul>
+             </div>
+
+             <div class="mod_help">
+                 <dl>
+                     <dt>服务指南</dt>
+                     <dd><a href="#">服务流程</a></dd>
+                     <dd><a href="#">会员介绍</a></dd>
+                     <dd><a href="#">生活旅行</a></dd>
+                     <dd><a href="#">常见问题</a></dd>
+                     <dd><a href="#">大家电</a></dd>
+                     <dd><a href="#">联系客服</a></dd>
+                 </dl>
+                 <dl>
+                    <dt>服务指南</dt>
+                    <dd><a href="#">服务流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd><a href="#">服务流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd><a href="#">服务流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>服务指南</dt>
+                    <dd><a href="#">服务流程</a></dd>
+                    <dd><a href="#">会员介绍</a></dd>
+                    <dd><a href="#">生活旅行</a></dd>
+                    <dd><a href="#">常见问题</a></dd>
+                    <dd><a href="#">大家电</a></dd>
+                    <dd><a href="#">联系客服</a></dd>
+                </dl>
+                <dl>
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <img data-lazy-src="images/wx_cz.jpg" alt="">
+                        品优购客户端
+                    </dd>
+                </dl>
+             </div>
+
+             <div class="mod_copyright">
+                 <div class="links">
+                    <a href="#">关于我们</a>  |  <a href="#">联系我们</a>  |  
+                    <a href="#">联系客服</a>  |  <a href="#">商家入驻</a>  |  
+                    <a href="#">营销中心</a>  |  <a href="#">手机品优购</a>  |  
+                    <a href="#">友情链接</a>  |  <a href="#">销售联盟</a>  |  
+                    <a href="#">品优购社区</a>  |  <a href="#">品优购公益</a>  |  
+                    <a href="#">English Site</a>  |  <a href="#">Contact U</a>
+                 </div>
+                 <div class="copyright">
+                    地址：北京市昌平区建材城西路金燕龙办公楼一层 邮编：100096 电话：400-618-4000 传真：010-82935100 邮箱: zhanghj+itcast.cn <br>
+                    京ICP备08001421号京公网安备110108007702
+                 </div>
+             </div>
+         </div>
+    </footer>
+
+    <script src="js/EasyLazyload.min.js"></script>
+    <script>
+        lazyLoadInit({
+            showTime: 500,
+            onLoadBackEnd: function(i, e) {
+                console.log("onLoadBackEnd:" + i);
+            },
+            onLoadBackStart: function(i, e) {
+                console.log("onLoadBackStart:" + i);
+            }
+        });
+    </script>
+</body>
+</html>

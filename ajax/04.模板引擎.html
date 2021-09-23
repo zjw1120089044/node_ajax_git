@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板引擎</title>
+    <script src="./template-web.js"></script>
+    <script src="./jQuery.js"></script>
+</head>
+<body>
+    <div id="box"></div>
+
+
+
+<!-- 模板html -->
+<script type="text/html" id="tpl-user">
+    <h1>姓名：{{name}}，年龄：{{age}}</h1>
+
+    {{test}}   <!-- 若不加 @会将标签原文输出 -->
+
+    {{if flag == 1}}
+        flag值为1
+    {{else if flag == 0}}
+        flag值为0
+    {{else}}
+        flag值未知
+    {{/if}}
+
+
+    {{each hobbies}}
+        <li>{{$index}}, {{$value}}</li>
+    {{/each}}
+
+
+            <!-- 过滤器 -->
+    <h3>{{nowTime | dateFormat}}</h3>
+</script>
+
+<script>
+    var data = {
+        name: '张三',
+        age: 20,
+        test: '<h3>原文输出</h3>',
+        flag: 1,
+        hobbies: ['吃饭', '睡觉', '写代码'],
+        nowTime: new Date()
+    };
+
+    // 过滤器函数filter
+    template.defaults.imports.dateFormat = function(date){
+        var y = date.getFullYear();
+        var m = date.getMonth() + 1;
+        var d = date.getDate();
+
+        return y +'-'+ m + '-' + d;   //最后必须return
+    }
+
+
+                        //不需要加#
+    var htmlstr = template('tpl-user', data);
+
+    $('#box').html(htmlstr);
+</script>
+
+</body>
+</html>

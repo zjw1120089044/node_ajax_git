@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_Ajax</title>
+    <script src="jQuery.js"></script>
+</head>
+<body>
+    <button class="btnGET">发起GET请求</button>
+
+    <button class="btnPOST">发起POST请求</button>
+
+    <button class="btnAjaxG">ajax发起GET请求</button>
+
+    <button class="btnAjaxP">ajax发起POST请求</button>
+
+<script>
+    // 由于浏览器提供的XMLHttpRequest用法复杂 ，jquery对其进行了封装降低了使用难度
+
+    $(function(){
+        $('.btnGET').on('click', function(){
+                            // 请求地址                         传递参数
+            $.get('http://www.liulongbin.top:3006/api/getbooks', (res) => {
+                console.log(res);
+            })
+        })
+
+
+        $('.btnPOST').on('click', function(){
+            $.post('http://www.liulongbin.top:3006/api/addbook',
+            {bookname: '水浒传水浒传', author: '汪桃', publisher: '杭州图书出版社'},
+            (res) => {console.log(res);})
+        })
+
+
+        // $.ajax发起GET请求
+        $('.btnAjaxG').on('click', function(){
+            $.ajax({
+                type: 'GET',
+                url: 'http://www.liulongbin.top:3006/api/getbooks',
+                data: {
+                    name: 'zhangsan'
+                },
+                success: (res) => {console.log(res);}
+            })
+        })
+
+        // $.ajax发起POST请求
+        $('.btnAjaxP').on('click', function(){
+            $.ajax({
+                type: 'POST',
+                url: 'http://www.liulongbin.top:3006/api/addbook',
+                data: {
+                    bookname: '史记',
+                    author: '司马迁',
+                    publisher: '杭州图书出版社'
+                },
+                success: (res) => {console.log(res);}
+            })
+        })
+    })
+
+</script>
+
+</body>
+</html>
+
+

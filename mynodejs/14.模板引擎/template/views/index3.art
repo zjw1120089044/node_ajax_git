@@ -1,0 +1,16 @@
+<!-- 子模板可将网站公共区域(头部 ，底部)抽离到单独的文件中 -->
+
+{{extend './common/layout.art'}}
+
+{{block 'link'}}
+    <link rel="stylesheet" href="./main.css">
+{{/block}}
+
+{{block 'content'}}
+    {{include './common/header.art'}}
+    <% include('./common/header.art') %>
+    <div> {{message}} </div>
+    <% include('./common/footer.art') %>
+    {{include './common/footer.art'}}
+{{/block}}
+

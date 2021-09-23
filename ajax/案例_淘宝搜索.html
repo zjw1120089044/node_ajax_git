@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>淘宝搜索</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 12px;
+        }
+        .logo {
+            width: 225px;
+            height: 65px;
+            margin: 50px 0;
+        }
+        .tabs {
+            display: flex;
+        }
+        .tabs div {
+            width: 55px;
+            height: 23px;
+            line-height: 23px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .tabs div:hover {
+            color: #ff5700;
+        }
+        .tabs .tab-active {
+            background-color: #ff5700;
+            font-weight: bold;
+            color: #fff;
+        }
+        .tabs .tab-active:hover {
+            color: #fff;
+        }
+        .search-box .ipt {
+            box-sizing: border-box;
+            width: 500px;
+            height: 45px;
+            line-height: 45px;
+            margin: 0;
+            padding: 0;
+            padding-left: 10px;
+            outline: none;
+            border: 2px solid #ff5700;
+            font-size: 16px;
+        }
+        .btnSearch {
+            box-sizing: border-box;
+            width: 100px;
+            height: 45px;
+            border: 0;
+            padding-bottom: 5px;
+            margin: 0;
+            background-color: #ff5700;
+            color: #fff;
+            text-align: center;
+            line-height: 45px;
+            letter-spacing: 1em;
+            font-size: 16px;
+            outline: none;
+            cursor: pointer;
+            border-radius: 0 22px 22px 0;
+        }
+        .btnSearch:hover {
+            opacity: 0.9;
+        }
+        .suggest-list {
+            display: none;
+            width: 497px;
+            border: 1px solid #ccc;
+        }
+        .suggest-item {
+            padding-left: 10px;
+            line-height: 30px;
+        }
+        .suggest-item:hover {
+            background-color: skyblue;
+            cursor: pointer;
+        }
+    </style>
+    <script src="./jQuery.js"></script>
+    <script src="./template-web.js"></script>
+</head>
+<body>
+    <div class="container">
+        <img src="./images/taobao_logo.png" class="logo" alt="">
+
+        <div class="box">
+            <div class="tabs">
+                <div class="tab-active">宝贝</div>
+                <div>店铺</div>
+            </div>
+
+            <div class="search-box">
+                <input type="text" class="ipt" placeholder="请输入要搜索的内容"><button class="btnSearch">搜索</button>
+            </div>
+
+            <div class="suggest-list" id="suggest-list"></div>
+        </div>
+    </div>
+
+<!-- 模板结构 -->
+<script type="text/html" id="tpl-suggestList">
+    {{each result}}
+        <div class="suggest-item">{{$value[0]}}</div>
+    {{/each}}
+</script>
+
+
+<script>
+    $(function(){
+        $('.ipt').on('keyup', function(){
+            clearTimeout(timer);
+
+            // 当输入框中的内容为空时，隐藏推荐框
+            var keywords = $(this).val().trim();
+            if(keywords.length <= 0){
+                return $('#suggest-list').empty().hide();
+            }
+
+            // 若缓存中存在该值则从缓存中渲染
+            if(cacheObj[keywords]){
+                return renderSuggestList(cacheObj[keywords]);
+            }
+
+            debounceSearch(keywords);
+        })
+
+        // 发送GET请求
+        function getSuggestList(kw){
+            $.ajax({
+                url: `https://suggest.taobao.com/sug?q=${kw}`,
+                dataType: 'jsonp',
+                success: res => {
+                    console.log(res);
+                    renderSuggestList(res);
+                }
+            })
+        }
+
+        // 渲染推荐列表
+        function renderSuggestList(res){
+            if(res.result.length <= 0){
+                return $('#suggest-list').empty().hide();
+            }
+            var htmlstr = template('tpl-suggestList', res);
+            $('#suggest-list').html(htmlstr).show();
+
+            // 缓存数据
+            var k = $('.ipt').val().trim();
+            cacheObj[k] = res;
+        }
+
+        // 防抖策略
+        var timer = null;
+        function debounceSearch(kw){
+            timer = setTimeout(() => {
+                getSuggestList(kw)
+            }, 500);
+        }
+
+        // 搜索缓存优化
+        var cacheObj = {};
+
+
+
+    })
+</script>
+
+</body>
+</html>

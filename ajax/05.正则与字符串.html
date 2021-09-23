@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>正则</title>
+</head>
+<body>
+    
+
+
+<script>
+    // exec()检测字符串与正则表达式的匹配 ，有匹配的值返回该值 ，否则返回null
+    var str = 'hello';
+    var reg = /o/;
+    console.log(reg.exec(str));  //["o", index: 4, input: "hello", groups: undefined]
+
+
+    var str1 = '<div>姓名：{{name}}</div>';
+    var reg = /{{([a-zA-Z]+)}}/   //筛选出模板语法的{{}}
+    var result = reg.exec(str1);
+    console.log(result);
+    str1 = str1.replace(result[0], result[1]);   //模板引擎原理
+    console.log(str1);
+
+
+
+    var data = {
+        name: '张三',
+        age: 18
+    }
+    var str2 = '<div>{{name}}今年{{age}}岁</div>';
+    var reg = /{{\s*([a-zA-z]+)\s*}}/
+    var result = reg.exec(str2);
+    // console.log(reg.exec(str2));
+    while(result){
+        str2 = str2.replace(result[0], data[result[1]]);
+        result = reg.exec(str2);
+    }
+    console.log(str2);
+
+
+    // 自定义的模板引擎
+    function mytemplate(id, data){
+        var str = document.getElementById(id).innerHTML;
+        var reg = /{{\s*([a-zA-z]+)\s*}}/
+
+        var result = null;
+        while(result = reg.exec(str)){
+            str = str.replace(result[0], data[result[1]])
+        }
+        return str;
+    }
+
+</script>
+
+</body>
+</html>

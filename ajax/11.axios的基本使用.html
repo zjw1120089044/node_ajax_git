@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>axios</title>
+    <script src="./axios.js"></script>
+</head>
+<body>
+    <button id="btn1">发起GET请求</button>
+
+    <button id="btn2">发起POST请求</button>
+
+    <button id="btn3">axios发起GET请求</button>
+
+    <button id="btn4">axios发起POST请求</button>
+
+<script>
+    var btn1 = document.querySelector('#btn1');
+    btn1.addEventListener('click', function(){
+        var url = 'http://www.liulongbin.top:3006/api/get';
+        var paramsObj = {name: 'zs', age: 20};
+        axios.get(url, {params: paramsObj}).then(res => {
+            console.log(res);   //这里的res是经过axios包装的 ，并不是真正的response
+            console.log(res.data);  //res.data才是服务器的响应
+        })
+    })
+
+    var btn2 = document.querySelector('#btn2');
+    btn2.addEventListener('click', function(){
+        var url = 'http://www.liulongbin.top:3006/api/post';
+        var dataObj = {address: '杭州', location: '江干区'};
+        axios.post(url, dataObj).then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
+    })
+
+
+    var btn3 = document.querySelector('#btn3');
+    btn3.addEventListener('click', function(){
+        var url = 'http://www.liulongbin.top:3006/api/get';
+        var paramsData = {name: '钢铁侠', age: 35};
+        axios({
+            method: 'GET',
+            url: url,
+            params: paramsData
+        }).then(res => console.log(res.data))
+    })
+
+    var btn4 = document.querySelector('#btn4');
+    btn4.addEventListener('click', function(){
+        axios({
+            method: 'POST',
+            url: 'http://www.liulongbin.top:3006/api/post',
+            data: {
+                name: '李四',
+                age: 18,
+                gender: '女'
+            }
+        }).then(res => console.log(res.data))
+    })
+</script>
+
+</body>
+</html>

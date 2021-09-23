@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+</head>
+<body>
+    
+
+
+<script>
+    var xhr = new XMLHttpRequest();                                //0:XHR对象已创建 ，未调用open
+    //创建请求
+    xhr.open('GET', 'http://www.liulongbin.top:3006/api/getbooks');//1:open()已调用
+    //发送请求
+    xhr.send();                                                    //2:send()已调用 ，响应头被接收
+    // 监听readystatechange事件
+    xhr.onreadystatechange = function(){                           //3:数据接收中 ，response中已有部分数据
+            // 请求状态  (固定写法)
+        if(xhr.readyState == 4 && xhr.status == 200){              //4:Ajax请求完成 ，数据传输完成或失败
+            console.log(xhr.responseText);
+            //输出的结果是JSON字符串形式
+        }
+    }
+
+
+    // 发送带参数的请求
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open('GET', 'http://www.liulongbin.top:3006/api/getbooks?id=1&bookname=西游记');
+    xhr1.send();
+    xhr1.onreadystatechange = function(){
+        if(xhr1.readyState == 4 && xhr1.status == 200){
+            console.log(xhr1.responseText);
+        }
+    }
+
+
+    // URL中除字母，数字，标点符号外的其他字符会被转义为安全的英文字符
+    // 西游记 = %E8%A5%BF %E6%B8%B8 %E8%AE%B0  (三个%表示一个中文字符)
+    // 编码函数
+    console.log(encodeURI('黑马程序员'));
+    // 解码函数
+    console.log(decodeURI('%E9%BB%91%E9%A9%AC'));
+
+
+    // 发送post请求
+    var xhr2 = new XMLHttpRequest();
+    xhr2.open('POST', 'http://www.liulongbin.top:3006/api/addbook');
+    // 设置Content-Type属性  (固定写法)
+    xhr2.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr2.send('bookname=三体a&author=刘慈欣&publisher=杭州图书出版社')
+    xhr2.onreadystatechange = function(){
+        if(xhr2.readyState == 4 && xhr2.status == 200){
+            console.log(xhr2.responseText);
+        }
+    }
+</script>
+
+</body>
+</html>
